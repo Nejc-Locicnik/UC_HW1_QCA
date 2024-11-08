@@ -1,8 +1,12 @@
-# Implementacija MUX s QCA
+# Implementacija MUX s QCA (začasen naslov)
 
 ## Abstract
 
+(Napisemo cisto na koncu)
+
 ## Uvod
+
+Motivacija za QCA kot platformo.
 
 ### QCA
 
