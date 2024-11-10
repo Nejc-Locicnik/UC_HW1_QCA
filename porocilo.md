@@ -6,11 +6,15 @@
 
 ## Uvod
 
-Motivacija za QCA kot platformo.
+Motivacija za kvantno procesiranje in QCA kot platformo.
 
 ### QCA
 
 QCA celica, ura, vodila...
+
+### Reverzibilno procesiranje
+
+Kaj je, zakaj je dobro? Katere funkcije (identiteta, negacija... CC-NOT, C-SWAP... - poln funkcijski nabor)
 
 ### Multiplekser
 
