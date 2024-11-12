@@ -21,7 +21,7 @@
 
 ### Multiplekser
 
-Multiplekser (oziroma MUX) je logično vezje z 2^n vhodnimi signali, n adresnimi signali in enim izhodnim signalom. Deluje kot stikalo, ki omogoča izbiro enega izmed več vhodov, glede na kontrolne signale. Slika (REF) prikazuje najbolj osnoven 2:1 multiplekser z dvema vhodnima signaloma, enim adresnim signalom in enim izhodnim signalom.
+Multiplekser (oziroma MUX) je logično vezje z 2^n vhodnimi signali, n adresnimi signali in enim izhodnim signalom. Deluje kot stikalo, ki omogoča izbiro enega izmed več vhodov, glede na adresne signale. Slika (REF) prikazuje najbolj osnoven 2:1 multiplekser z dvema vhodnima signaloma, enim adresnim signalom in enim izhodnim signalom.
 
 [Slika: 2:1 multiplekser](images/mux-2-1.pdf)
 
@@ -53,23 +53,16 @@ R = (NOT A AND C) OR (A AND B)
 TODO - Tole je iz navodil, meni se sicer zdi malo neumno: 
 V poglavju Metode opišite, ali ste uporabili ad hoc metodo ali ste formalizirali metodo snovanja QCA strukture. Navedite tudi, ali prosto določite urino cono vsaki posamezni QCA celici ali je vaša struktura zasnovana z uporabo strukturiranih pravokotnih urinih con.
 
-### Zasnova logično reverzibilnega 2:1 MUX
-
-- Maybe gre to poglavje pod UVOD?
-- Najbolj preprosto da samo uporabimo Fredkinova vrata.
-- Opišemo zakaj so Fredkinova vrata primerna za MUX
-
-### Zasnova fizično reverzibilnega 2:1 MUX 
+### Realizacija reverzibilnega 2:1 multiplekserja s QCA 
 
 - različne implementacije Fredkinovih vrat s QCA
 - zasnova v QCADesignerju
 - treba je preverit ali dobimo na izhodih ustrezne vrednosti, določene z bijekcijo, če spremenimo vhodne funkcije v izhodne in obratno (to piše v navodilih)
 
-### Zasnova fizično reverzibilnega 4:1 MUX
+### Realizacija reverzibilnega 4:1 multiplekserja s QCA 
 
-- ne vem a je treba najprej tudi zasnovat logično reverzibilno 4:1 MUX pa potem iz tega izhajat, ali lahko gremo kar direkt na fizično reverzibilno implementacijo ???
-- različne implementacije Fredkinovih vrat s QCA
-- zasnova v QCADesignerju
+- povemo da je mogoče realizirati naprednejše MUX (npr. 4:1) z uporabo osnovnih 2:1 MUX (referenca na podpoglavje Multiplekser iz poglavja Uvod)
+- realiziramo v QCADesignerju
 - treba je preverit ali dobimo na izhodih ustrezne vrednosti, določene z bijekcijo, če spremenimo vhodne funkcije v izhodne in obratno (to piše v navodilih)
 
 ## Rezultati
