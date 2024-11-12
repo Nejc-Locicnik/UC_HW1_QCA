@@ -18,6 +18,7 @@
 - kaj je? zakaj je dobro?
 - osnovne (1,1) funkcije (identiteta, negacija)
 - (3,3) funkcije ki predstavljajo poln fukncijski nabor (CC-NOT oz Toffolijeva vrata, C-SWAP oz Fredkinova vrata)
+- nujno mora tukaj bit še pravilnostna tabela za Fredkinova vrata (ker jo bomo kasneje referencali)
 
 ### Multiplekser
 
@@ -55,14 +56,30 @@ V poglavju Metode opišite, ali ste uporabili ad hoc metodo ali ste formaliziral
 
 ### Realizacija reverzibilnega 2:1 multiplekserja s QCA 
 
+Kot smo ugotovili v poglavju (REF: Multiplekser), za realizacijo 2:1 multiplekserja potrebujemo zgolj eno instanco Fredkinovih vrat. V tem poglavju bomo implementirali različne realizacije Fredkinovih vrat v QCA z uporabo orodja QCADesigner.
+
+#### Prva implementacija Fredkinovih vrat
+
+Najprej smo z orodjem QCADesigner implementirali Fredkinova vrata iz članka (SinghSarinRaj). Postavitev celic je predstavljena na Sliki (REF). Za realizacijo smo uporabili 73 QCA celic in tri urine cikle. Vhodna celica S0 predstavlja adresni signal, vhodni celici A in B pa vhodna signala v multiplekser. Izhodni signal Q predstavlja izhod iz multiplekserja med tem ko izhodna signala P in R predstavljata neuporabna (garbage) izhoda.
+
+[Slika: Realizacija prvih Fredkinovih vrat s QCA](images/fredkin1-layout.pdf)
+
+Rezultati simulacije Fredkinovih vrat so prikazani na Sliki (REF). Primerjava teh rezultatov s pravilnostno tabelo Fredkinovih vrat (REF: pravilnostna tabela Fredkin) potrjuje, da vezje deluje pravilno.
+
+[Slika: Rezultati simulacije prvih Fredkinovih vrat s QCA](images/fredkin1-results.pdf)
+
+#### Druga implementacija Fredkinovih vrat
+
+TODO:
 - različne implementacije Fredkinovih vrat s QCA
 - zasnova v QCADesignerju
+- preveri ali se izhodi ujemajo s pravilnostno tabelo Fredkinovih vrat
 - treba je preverit ali dobimo na izhodih ustrezne vrednosti, določene z bijekcijo, če spremenimo vhodne funkcije v izhodne in obratno (to piše v navodilih)
 
 ### Realizacija reverzibilnega 4:1 multiplekserja s QCA 
 
 - povemo da je mogoče realizirati naprednejše MUX (npr. 4:1) z uporabo osnovnih 2:1 MUX (referenca na podpoglavje Multiplekser iz poglavja Uvod)
-- realiziramo v QCADesignerju
+- realiziramo v QCADesignerju (združimo 3 fredkinova vrata in dobimo 4:1 MUX)
 - treba je preverit ali dobimo na izhodih ustrezne vrednosti, določene z bijekcijo, če spremenimo vhodne funkcije v izhodne in obratno (to piše v navodilih)
 
 ## Rezultati
@@ -81,4 +98,4 @@ Primerjava različnih implementacij MUX:
 
 ## Literatura
 
-
+[SinghSarinRaj](https://doi.org/10.1016/j.micpro.2017.05.017)
