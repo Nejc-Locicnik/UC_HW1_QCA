@@ -28,7 +28,7 @@ Multiplekser (oziroma MUX) je logično vezje z 2^n vhodnimi signali, n adresnimi
 
 Multiplekserji imajo več praktičnih primerov uporabe, med katerimi so: izbira podatkov iz različnih virov (pomnilniški čipi, strojne periferne naprave) v računalniških sistemih, časovno multipleksiranje (Time-Division Multiplexing) v digitalnih komunikacijah, usmerjanje analognih signalov in drugi.
 
-Multiplekser predstavlja polni funkcijski nabor, torej je z njim mogoče implementirati poljubno logično funkcijo. Prav tako lahko osnovne (2:1) multiplekserje uporabimo za realizacijo kompleksnejših multiplekserjev (npr. 4:1 MUX, 8:1 MUX...), kot je prikazano na sliki (REF).
+Multiplekser predstavlja polni funkcijski nabor, torej je z njim mogoče implementirati poljubno logično funkcijo. Prav tako lahko osnovne 2:1 multiplekserje uporabimo za realizacijo kompleksnejših multiplekserjev (npr. 4:1 MUX, 8:1 MUX...), kot je prikazano na sliki (REF).
 
 [Slika: Realizacija 4:1 multiplekserja z uporabo treh 2:1 multiplekserjev](images/mux-4-1.pdf)
 
@@ -37,15 +37,15 @@ Slika (REF) predstavlja najbolj osnovno logično predstavitev multiplekserja, iz
 [Slika: Realizacija 2:1 multiplekserja z uporabo AND, OR in NOT vrat](images/mux-log-vezje-nereverzibilno.pdf)
 
 Vseeno pa nam takšna realizacija multiplekserja ne ustreza, saj vezje ni reverzibilno, kar je očitno že iz neujemanja števila vhodov in števila izhodov. 
-Za realizacijo logično reverzibilnega multiplekserja smo se odločili uporabiti Fredkinovo fukncijo (imenovano tudi Controlled SWAP oziroma C-SWAP), definirano s sledečimi logičnimi izrazi:
+Za realizacijo logično reverzibilnega multiplekserja smo se odločili uporabiti Fredkinovo fukncijo (imenovano tudi Controlled SWAP oziroma C-SWAP), definirano s sledečimi logičnimi izrazi (za vhodne signale S0, A in B):
 
-P = A
+P = S0
 
-Q = (NOT A AND B) OR (A AND C)
+Q = (NOT S0 AND A) OR (S0 AND B)
 
-R = (NOT A AND C) OR (A AND B)
+R = (NOT S0 AND B) OR (S0 AND A)
 
-Če na vhodni signal A vežemo adresni MUX signal in na vhodna signala B in C vežemo vhodna MUX signala, postane realizacija multiplekserja s Fredkinovo funkcijo trivialna: Na izhodu Q dobimo MUX izhodni signal, med tem ko P in R postaneta neuporabna (garbage) izhoda. Za lažjo predstavitev je realizacija 2:1 MUX z uporabo Fredkinovih vrat prikazana na Sliki (REF), kjer signal S0 predstavlja adresni signal multiplekserja in signala A in B predstavljata vhodna signala multiplekserja.
+Realizacija multiplekserja s Fredkinovo funkcijo je trivialna: Na izhodu Q dobimo MUX izhodni signal, med tem ko P in R postaneta neuporabna (garbage) izhoda. Za lažjo predstavitev je realizacija 2:1 MUX z uporabo Fredkinovih vrat prikazana na Sliki (REF), kjer signal S0 predstavlja adresni signal multiplekserja in signala A in B predstavljata vhodna signala multiplekserja.
 
 [Slika: Realizacija 2:1 multiplekserja z uporabo Fredkinovih vrat (C-SWAP)](images/mux-fredkin.pdf)
 
