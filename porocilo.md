@@ -2,100 +2,174 @@
 
 ## Abstract
 
-(Napišemo čisto na koncu)
+> [!NOTE]
+> TODO:
+>
+> Napišemo čisto na koncu
 
 ## Uvod
 
-- Motivacija za kvantno procesiranje in QCA kot platformo.
+S sodobnim razvojem nanotehnologij tako na tehnološkem (razvoj novih materialov in načinov njihove obdelave) kot na procesnem področju (implementacija nadzorljivih dinamičnih procesov) se posledično razvija tudi področje nanoračunalništva.
+Trenutni kazalniki razvoja področja nanoračunalništva dolgoročno kažejo na pospešen razvoj kvantnih računalnikov, ki bodo z adopcijo v industriji zaradi boljših značilnosti kot so energijska varčnost, možnost pospešitve trenutnih algoritmov ali minimizacija procesnih enot.
+
+Trenutno najbolj perspektivna tehnologija, ki omogoča zgoraj opisane prednosti kvantnega računalništva je QCA (angl. _quantum-dot cellular automata_).
 
 ### QCA
 
-- QCA celica, ura, vodila...
-- Osnovne QCA strukture (negacija, majoritetna vrata)
+Delovanje QCA procesne strukture temelji na zakonih delovanja kvantne fizike.
+Najmanjša osnovna komponenta QCA je kvantna ali QCA celica.
+Ta je laično predstavljena kot dvodimenzionalna struktura kvadratne oblike s štirimi kvantnimi pikami v robovih celice.
+Vsaka kvantna pika ima pozitiven električni naboj, ki privlači dva elektrona, ki sta ujeta znotraj celične strukture.
+Zaradi električnih odbojnih sil med obema elektronoma, se ta ne moreta istočasno nahajati v isti kvantni piki.
+Kvantne pike so v celici povezane s štirimi tuneli, ki omogočajo prosto prehajanje ali tuneliranje elektronov med sosednjimi kvantimi pikami.
+Shematski prikaz kvantne celice je prikazan na sliki (REF).
+
+[Slika: Struktura kvantne celice]()
+
+Elektrona v kvantni celici se vedno postavita v energetsko najbolj ugodno pozicijo, kar je ena izmed diagonalnih leg (polarizacija $P = +1$ ali $P = -1$).
+S prostim prehodom elektronov v celici je omogočen prenos informacij med sosednjimi kvantnimi celicami.
+Ker lega elektronov v celici vpliva na lego elektronov v sosednjih celicah, lahko s skrbno postavljenimi celicami izdelamo minimalne strukture, kot so vodila ali druge logične strukture.
+
+Na sliki (REF) sta predstavljena osnovna gradnika za dvovrednostno procesiranje v QCA. To sta negacija (`NOT`) in majoritetna vrata (delimo jih na `AND` in `OR` del), ki skupaj tvorita poln funkcijski nabor, s katerim lahko izrazimo katerokoli poljubno funkcijo.
+
+[Slika: Osnovna gradnika v QCA]()
+
+Poleg gradnikov potrebujemo tudi strukturo za prenos informacij med gradniki.
+Tu uporabimo vodila, ki so lahko realizirana v ortogonalni ali diagonalni izvedbi.
+Pri slednji moramo paziti, da se z vsako celico prenešen podatek negira.
+Slika (REF) prikazuje shematski prikaz obeh vrst vodil.
+
+[Slika: Vodila]()
 
 ### Reverzibilno procesiranje
 
-- kaj je? zakaj je dobro?
-- osnovne (1,1) funkcije (identiteta, negacija)
-- (3,3) funkcije ki predstavljajo poln fukncijski nabor (CC-NOT oz Toffolijeva vrata, C-SWAP oz Fredkinova vrata)
-- nujno mora tukaj bit še pravilnostna tabela za Fredkinova vrata (ker jo bomo kasneje referencali)
+Za učinkovito realiazacijo kvantnega procesiranja potrebujemo vezje zasnovati z metodološkim pristopom reverzibilnosti.
+Ta pristop sloni na definiciji logične reverzibilnosti, ki pravi, da mora biti njegova prevajalna funkcija bijektivna.
+
+Pravilnostne tabele bijektivnih funkcij tipa (1,1) (funkcije z enim vhodom in enim izhodom) so predstavljene na sliki (REF).
+
+[Slika: Funkcije (1,1)]()
+
+Najboljšo osnovo za prehod na reverzibilno procesiranje naj bi predstavljale funkcije tipa (3,3).
+Tu izmed vseh funkcij izpostavljamo Toffolijeva vrata (Controlled-controlled-not ali `CCNOT`), ki sama po sebi predstavljajo poln funkcijski nabor.
+Shematski prikaz je prikazan na sliki (REF).
+
+[Slika: Shematski prikaz Toffolijevih vrat]()
+
+Prav tako izpostavljamo univerzalno Fredkinovo funkcijo (Controlled-swap ali `CSWAP`), katere pravilnostna tabela je napisana v tabeli (REF).
+Ta funkcija prav tako predstavlja poln funkcijski nabor.
+
+[Tabela: Pravilnostna tabela Fredkinove funkcije tipa (3,3)]()
 
 ### Multiplekser
 
-Multiplekser (oziroma MUX) je logično vezje z 2^n vhodnimi signali, n adresnimi signali in enim izhodnim signalom. Deluje kot stikalo, ki omogoča izbiro enega izmed več vhodov, glede na adresne signale. Slika (REF) prikazuje najbolj osnoven 2:1 multiplekser z dvema vhodnima signaloma, enim adresnim signalom in enim izhodnim signalom.
+Multiplekser (oziroma MUX) je logično vezje z $2^n$ vhodnimi signali, $n$ adresnimi signali in enim izhodnim signalom.
+Deluje kot stikalo, ki omogoča izbiro enega izmed več vhodov, glede na adresne signale.
+Slika (REF) prikazuje najbolj osnoven 2:1 multiplekser z dvema vhodnima signaloma, enim adresnim signalom in enim izhodnim signalom.
 
 [Slika: 2:1 multiplekser](images/mux-2-1.pdf)
 
 Multiplekserji imajo več praktičnih primerov uporabe, med katerimi so: izbira podatkov iz različnih virov (pomnilniški čipi, strojne periferne naprave) v računalniških sistemih, časovno multipleksiranje (Time-Division Multiplexing) v digitalnih komunikacijah, usmerjanje analognih signalov in drugi.
-
-Multiplekser predstavlja polni funkcijski nabor, torej je z njim mogoče implementirati poljubno logično funkcijo. Prav tako lahko osnovne 2:1 multiplekserje uporabimo za realizacijo kompleksnejših multiplekserjev (npr. 4:1 MUX, 8:1 MUX...), kot je prikazano na sliki (REF).
+Multiplekser predstavlja polni funkcijski nabor, torej je z njim mogoče implementirati poljubno logično funkcijo.
+Prav tako lahko osnovne 2:1 multiplekserje uporabimo za realizacijo kompleksnejših multiplekserjev (npr. 4:1 MUX, 8:1 MUX...), kot je prikazano na sliki (REF).
 
 [Slika: Realizacija 4:1 multiplekserja z uporabo treh 2:1 multiplekserjev](images/mux-4-1.pdf)
 
-Slika (REF) predstavlja najbolj osnovno logično predstavitev multiplekserja, izvedeno z uporabo osnovnih logičnih vrat AND, OR in NOT.
+Slika (REF) predstavlja najbolj osnovno logično predstavitev multiplekserja, izvedeno z uporabo osnovnih logičnih vrat `AND`, `OR` in `NOT`.
 
 [Slika: Realizacija 2:1 multiplekserja z uporabo AND, OR in NOT vrat](images/mux-log-vezje-nereverzibilno.pdf)
 
-Vseeno pa nam takšna realizacija multiplekserja ne ustreza, saj vezje ni reverzibilno, kar je očitno že iz neujemanja števila vhodov in števila izhodov. 
-Za realizacijo logično reverzibilnega multiplekserja smo se odločili uporabiti Fredkinovo fukncijo (imenovano tudi Controlled SWAP oziroma C-SWAP), definirano s sledečimi logičnimi izrazi (za vhodne signale S0, A in B):
+Vseeno pa nam takšna realizacija multiplekserja ne ustreza, saj vezje ni reverzibilno, kar je očitno že iz neujemanja števila vhodov in števila izhodov.
+Za realizacijo logično reverzibilnega multiplekserja smo se odločili uporabiti Fredkinovo fukncijo (imenovano tudi Controlled SWAP oziroma C-SWAP), definirano s sledečimi logičnimi izrazi (za vhodne signale $S0$, $A$ in $B$):
 
-P = S0
+$$
+\begin{align}
+P &= S0 \\
+Q &= (\text{NOT } S0 \text{ AND } A) \text{ OR } (S0 \text{ AND } B) \\
+R &= (\text{NOT } S0 \text{ AND } B) \text{ OR } (S0 \text{ AND } A)
+\end{align}
+$$
 
-Q = (NOT S0 AND A) OR (S0 AND B)
-
-R = (NOT S0 AND B) OR (S0 AND A)
-
-Realizacija multiplekserja s Fredkinovo funkcijo je trivialna: Na izhodu Q dobimo MUX izhodni signal, med tem ko P in R postaneta neuporabna (garbage) izhoda. Za lažjo predstavitev je realizacija 2:1 MUX z uporabo Fredkinovih vrat prikazana na Sliki (REF), kjer signal S0 predstavlja adresni signal multiplekserja in signala A in B predstavljata vhodna signala multiplekserja.
+Realizacija multiplekserja s Fredkinovo funkcijo je trivialna: Na izhodu $Q$ dobimo MUX izhodni signal, med tem ko $P$ in $R$ postaneta neuporabna (garbage) izhoda.
+Za lažjo predstavitev je realizacija 2:1 MUX z uporabo Fredkinovih vrat prikazana na Sliki (REF), kjer signal $S0$ predstavlja adresni signal multiplekserja in signala $A$ in $B$ predstavljata vhodna signala multiplekserja.
 
 [Slika: Realizacija 2:1 multiplekserja z uporabo Fredkinovih vrat (C-SWAP)](images/mux-fredkin.pdf)
 
 ## Metode
 
-TODO - Tole je iz navodil, meni se sicer zdi malo neumno: 
+TODO - Tole je iz navodil, meni se sicer zdi malo neumno:
 V poglavju Metode opišite, ali ste uporabili ad hoc metodo ali ste formalizirali metodo snovanja QCA strukture. Navedite tudi, ali prosto določite urino cono vsaki posamezni QCA celici ali je vaša struktura zasnovana z uporabo strukturiranih pravokotnih urinih con.
 
-### Realizacija reverzibilnega 2:1 multiplekserja s QCA 
+### Realizacija reverzibilnega 2:1 multiplekserja s QCA
 
-Kot smo ugotovili v poglavju (REF: Multiplekser), za realizacijo 2:1 multiplekserja potrebujemo zgolj eno instanco Fredkinovih vrat. V tem poglavju bomo implementirali različne realizacije Fredkinovih vrat v QCA z uporabo orodja QCADesigner.
+Kot smo ugotovili v poglavju (REF: Multiplekser), za realizacijo 2:1 multiplekserja potrebujemo zgolj eno instanco Fredkinovih vrat.
+V tem poglavju bomo implementirali različne realizacije Fredkinovih vrat v QCA z uporabo orodja (REF: `QCADesigner`).
 
 #### Prva implementacija Fredkinovih vrat
 
-Najprej smo z orodjem QCADesigner implementirali Fredkinova vrata iz članka (SinghSarinRaj). Postavitev celic je predstavljena na Sliki (REF). Za realizacijo smo uporabili 73 QCA celic in tri urine cikle. Vhodna celica S0 predstavlja adresni signal, vhodni celici A in B pa vhodna signala v multiplekser. Izhodni signal Q predstavlja izhod iz multiplekserja med tem ko izhodna signala P in R predstavljata neuporabna (garbage) izhoda.
+Najprej smo z orodjem `QCADesigner` implementirali Fredkinova vrata iz članka (SinghSarinRaj).
+Postavitev celic je predstavljena na sliki (REF).
+Za realizacijo smo uporabili 73 QCA celic in tri urine cikle.
+Vhodna celica $S0$ predstavlja adresni signal, vhodni celici $A$ in $B$ pa vhodna signala v multiplekser.
+Izhodni signal $Q$ predstavlja izhod iz multiplekserja medtem ko, izhodna signala $P$ in $R$ predstavljata neuporabna (garbage) izhoda.
 
 [Slika: Realizacija prvih Fredkinovih vrat s QCA](images/fredkin1-layout.pdf)
 
-Rezultati simulacije Fredkinovih vrat so prikazani na Sliki (REF). Primerjava teh rezultatov s pravilnostno tabelo Fredkinovih vrat (REF: pravilnostna tabela Fredkin) potrjuje, da vezje deluje pravilno.
+Rezultati simulacije Fredkinovih vrat so prikazani na sliki (REF).
+Primerjava teh rezultatov s pravilnostno tabelo Fredkinovih vrat (REF: pravilnostna tabela Fredkin) potrjuje, da vezje deluje pravilno.
 
 [Slika: Rezultati simulacije prvih Fredkinovih vrat s QCA](images/fredkin1-results.pdf)
 
 #### Druga implementacija Fredkinovih vrat
 
-TODO:
-- različne implementacije Fredkinovih vrat s QCA
-- zasnova v QCADesignerju
-- preveri ali se izhodi ujemajo s pravilnostno tabelo Fredkinovih vrat
-- treba je preverit ali dobimo na izhodih ustrezne vrednosti, določene z bijekcijo, če spremenimo vhodne funkcije v izhodne in obratno (to piše v navodilih)
+> [!NOTE]
+> TODO:
+>
+> - različne implementacije Fredkinovih vrat s QCA
+> - zasnova v QCADesignerju
+> - preveri ali se izhodi ujemajo s pravilnostno tabelo Fredkinovih vrat
+> - treba je preverit, ali dobimo na izhodih ustrezne vrednosti, določene z bijekcijo, če spremenimo vhodne funkcije v izhodne in obratno (to piše v navodilih)
 
-### Realizacija reverzibilnega 4:1 multiplekserja s QCA 
+### Realizacija reverzibilnega 4:1 multiplekserja s QCA
 
-- povemo da je mogoče realizirati naprednejše MUX (npr. 4:1) z uporabo osnovnih 2:1 MUX (referenca na podpoglavje Multiplekser iz poglavja Uvod)
-- realiziramo v QCADesignerju (združimo 3 fredkinova vrata in dobimo 4:1 MUX)
-- treba je preverit ali dobimo na izhodih ustrezne vrednosti, določene z bijekcijo, če spremenimo vhodne funkcije v izhodne in obratno (to piše v navodilih)
+> [!NOTE]
+> TODO:
+>
+> - povemo, da je mogoče realizirati naprednejše MUX (npr. 4:1) z uporabo osnovnih 2:1 MUX (referenca na podpoglavje Multiplekser iz poglavja Uvod)
+> - realiziramo v QCADesignerju (združimo 3 fredkinova vrata in dobimo 4:1 MUX)
+> - treba je preverit, ali dobimo na izhodih ustrezne vrednosti, določene z bijekcijo, če spremenimo vhodne funkcije v izhodne in obratno (to piše v navodilih)
 
 ## Rezultati
 
-Primerjava različnih implementacij MUX:
-- število QCA celic
-- površina oz. ploščina vezja
-- še kaj?
+> [!NOTE]
+> TODO:
+>
+> Primerjava različnih implementacij MUX:
+>
+> - število QCA celic
+> - površina oz. ploščina vezja
+> - še kaj?
 
 ## Zaključek
 
-(Napišemo čisto na koncu)
+> [!NOTE]
+> TODO:
+>
+> Napišemo na koncu
 
 ## Doprinosi avtorjev
 
+> [!NOTE]
+> TODO
+>
+> **Anže Arhar:**
+>
+> - Uvod
+>
+> **Kristjan Kostanjšek:**
+>
+> **Nejc Ločičnik:**
 
 ## Literatura
 
-[SinghSarinRaj](https://doi.org/10.1016/j.micpro.2017.05.017)
+[Reference](references.bib)
