@@ -10,9 +10,9 @@
 ## Uvod
 
 S sodobnim razvojem nanotehnologij tako na tehnološkem (razvoj novih materialov in načinov njihove obdelave) kot na procesnem področju (implementacija nadzorljivih dinamičnih procesov) se posledično razvija tudi področje nanoračunalništva.
-Trenutni kazalniki razvoja področja nanoračunalništva dolgoročno kažejo na pospešen razvoj kvantnih računalnikov, ki bodo z adopcijo v industriji zaradi boljših značilnosti kot so energijska varčnost, možnost pospešitve trenutnih algoritmov ali minimizacija procesnih enot.
+Trenutni kazalniki razvoja na področju nanoračunalništva dolgoročno nakazujejo na pospešen razvoj kvantnih računalnikov. Ti bodo ob adopciji v industriji prinesli prednosti, kot so energijska varčnost, pospešitev obstoječih algoritmov in minimizacija procesnih enot.
 
-Trenutno najbolj perspektivna tehnologija, ki omogoča zgoraj opisane prednosti kvantnega računalništva je QCA (angl. _quantum-dot cellular automata_).
+Ena izmed perspektivnih tehnologij, ki omogoča zgoraj opisane prednosti kvantnega računalništva je QCA (angl. _quantum-dot cellular automata_).
 
 ### QCA
 
@@ -122,6 +122,18 @@ Primerjava teh rezultatov s pravilnostno tabelo Fredkinovih vrat (REF: pravilnos
 
 #### Druga implementacija Fredkinovih vrat
 
+Za drugo različico implementacije Fredkinovih vrat smo si izbrali članek (SasamalSinghGhanekar). Postavitev celic je predstavljena na sliki (REF). Tokrat smo za realizacijo uporabili 68 celic in tri urine cikle. Vhodni in izhodni signali imajo zopet enaka poimenovanja.
+
+[Slika: Realizacija drugih Fredkinovih vrat s QCA](images/fredkin2-layout.pdf)
+
+Rezultati simulacije so predstavljeni na sliki (REF). Po podrobnem pregledu lahko ugotovimo, da se rezultati ne ujemajo popolnoma s pravilnostno tabelo Fredkinovih vrat. Napaka se pojavi, ko so vhodni signali S0, A in B nastavljeni na 1, 1, in 0, v tem zaporedju. Izhodni signal R bi v tem primeru moral biti nastavljen na 1, mi pa smo dobili izhodno vrednost 0.
+Kljub ugotovljeni napaki bi to vezje lahko uporabili za implementacijo multiplekserja, saj se napaka pojavi zgolj na neuporabnem (garbage) izhodnem signalu. Glavni izhodni signal Q, ki predstavlja izhod multiplekserja, ostaja "nepokvarjen" in deluje skladno s pričakovanji.
+
+[Slika: Rezultati simulacije drugih Fredkinovih vrat s QCA](images/fredkin2-results.pdf)
+
+
+#### Tretja implementacija Fredkinovih vrat
+
 > [!NOTE]
 > TODO:
 >
@@ -167,6 +179,9 @@ Primerjava teh rezultatov s pravilnostno tabelo Fredkinovih vrat (REF: pravilnos
 > - Uvod
 >
 > **Kristjan Kostanjšek:**
+>
+> - Podpoglavje Multiplekser
+> - Prvi dve implementaciji fredkinovih vrat
 >
 > **Nejc Ločičnik:**
 
