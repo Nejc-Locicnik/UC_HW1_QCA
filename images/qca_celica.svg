@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50mm"
+   height="50mm"
+   viewBox="0 0 50 50"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   sodipodi:docname="qca_celica.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="6.6457632"
+     inkscape:cx="75.160668"
+     inkscape:cy="103.44937"
+     inkscape:window-width="3840"
+     inkscape:window-height="2068"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="ConcaveTriangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path7" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       id="rect4"
+       width="11.640675"
+       height="12.288159"
+       x="19.172625"
+       y="19.200777" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.4073;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       id="rect1"
+       width="23.382912"
+       height="23.382912"
+       x="13.308544"
+       y="13.308544" />
+    <circle
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.395875;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;fill-opacity:1"
+       id="path1"
+       cx="19.179161"
+       cy="19.179161"
+       r="2.3752525" />
+    <circle
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.395875;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;fill-opacity:1"
+       id="circle1"
+       cx="30.820839"
+       cy="19.179161"
+       r="2.3752525" />
+    <circle
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.395875;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;fill-opacity:1"
+       id="circle2"
+       cx="19.179161"
+       cy="31.350006"
+       r="2.3752525" />
+    <circle
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.395875;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;fill-opacity:1"
+       id="circle3"
+       cx="30.820839"
+       cy="31.350006"
+       r="2.3752525" />
+    <circle
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       id="path3"
+       cx="19.179161"
+       cy="19.179161"
+       r="1.6323056" />
+    <circle
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       id="circle4"
+       cx="30.820839"
+       cy="31.350006"
+       r="1.6323056" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.52777px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;stroke-width:0.264583"
+       x="2.2065954"
+       y="26.352047"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif';letter-spacing:0px;stroke-width:0.264583"
+         x="2.2065954"
+         y="26.352047">tunel</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52777px;line-height:1;font-family:sans-serif;letter-spacing:0px;stroke-width:0.264583"
+       x="28.857761"
+       y="3.9426761"
+       id="text5"><tspan
+         sodipodi:role="line"
+         id="tspan5"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif';letter-spacing:0px;stroke-width:0.264583"
+         x="28.857761"
+         y="3.9426761">kvantna pika</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif';letter-spacing:0px;stroke-width:0.264583"
+         x="28.857761"
+         y="7.6116948"
+         id="tspan6">z elektronom</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52777px;line-height:1;font-family:sans-serif;letter-spacing:0px;stroke-width:0.264583"
+       x="1.8423406"
+       y="43.993881"
+       id="text8"><tspan
+         sodipodi:role="line"
+         id="tspan7"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif';letter-spacing:0px;stroke-width:0.264583"
+         x="1.8423406"
+         y="43.993881">kvantna pika</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif';letter-spacing:0px;stroke-width:0.264583"
+         x="1.8423406"
+         y="47.662899"
+         id="tspan8">brez elektrona</tspan></text>
+    <path
+       style="fill:none;stroke:#e5801a;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+       d="m 10.379905,25.196426 6.847721,-0.03981"
+       id="path12"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#e5801a;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+       d="M 28.693578,7.9974984 20.452425,15.442407"
+       id="path13"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#e5801a;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+       d="m 11.614088,41.041734 4.896916,-6.330158"
+       id="path14"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>

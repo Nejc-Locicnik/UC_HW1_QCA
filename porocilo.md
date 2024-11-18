@@ -131,7 +131,6 @@ Kljub ugotovljeni napaki bi to vezje lahko uporabili za implementacijo multiplek
 
 [Slika: Rezultati simulacije drugih Fredkinovih vrat s QCA](images/fredkin2-results.pdf)
 
-
 #### Tretja implementacija Fredkinovih vrat
 
 > [!NOTE]
@@ -177,6 +176,7 @@ Kljub ugotovljeni napaki bi to vezje lahko uporabili za implementacijo multiplek
 > **Anže Arhar:**
 >
 > - Uvod
+> - Izdelava slik
 >
 > **Kristjan Kostanjšek:**
 >
