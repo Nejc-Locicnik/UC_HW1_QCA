@@ -131,7 +131,19 @@ Kljub ugotovljeni napaki bi to vezje lahko uporabili za implementacijo multiplek
 
 [Slika: Rezultati simulacije drugih Fredkinovih vrat s QCA](images/fredkin2-results.pdf)
 
+
 #### Tretja implementacija Fredkinovih vrat
+
+Za tretjo različico implementacije Fredkinovih vrat smo si izbrali članek (https://link.springer.com/article/10.1007/s11227-022-04939-w). Postavitev celic je predstavljena na sliki (REF). Tokrat smo za realizacijo uporabili 30 celic v treh slojih (za prehod), ki se izvede v dveh urinih ciklih. Vhodni in izhodni signali imajo zopet enaka poimenovanja.
+
+Ta realizacija je v primerjavi s prvima dvema bistveno bolj kompaktna. Dobra je tudi njena simetričnost, ki dovoljuje različne orientacije/konfiguracije na površini iste velikosti.
+
+[Slika: Realizacija tretjih Fredkinovih vrat s QCA](images/fredkin3-layout.pdf)
+
+Rezultati simulacije Fredkinovih vrat so prikazani na sliki (REF).
+Primerjava teh rezultatov s pravilnostno tabelo Fredkinovih vrat (REF: pravilnostna tabela Fredkin) potrjuje, da vezje deluje pravilno.
+
+[Slika: Rezultati simulacije tretjih Fredkinovih vrat s QCA](images/fredkin3-results.pdf)
 
 > [!NOTE]
 > TODO:
@@ -142,6 +154,17 @@ Kljub ugotovljeni napaki bi to vezje lahko uporabili za implementacijo multiplek
 > - treba je preverit, ali dobimo na izhodih ustrezne vrednosti, določene z bijekcijo, če spremenimo vhodne funkcije v izhodne in obratno (to piše v navodilih)
 
 ### Realizacija reverzibilnega 4:1 multiplekserja s QCA
+
+Realizacija 4:1 RMUX je kot je opisano (ref nazaj na 2.2 k je standard 4:1 slika) iz vidika logike enostavna, saj lahko kaskadno dodajamo 2:1 multipleksorje (npr. 3x 2:1 MUX za 4:1 MUX, 7x 2:1 MUX za 8:1 MUX).
+
+Na voljo imamo prvo in tretjo različico 2:1 RMUX realizacije, saj druga ni delovala. Za poizkus smo se odločili za tretjo različico, saj je bistveno bolj kompaktna in se izvede v samo dveh urinih fazah. V teoriji bi se potem 4:1 RMUX lahko izvedel v enem urinem ciklu (4 fazah).
+
+Na koncu se je izkazalo, da je kompaktnost, za katero smo mislili da je prednost, dejansko slabost. Nikakor nam ni uspelo povezati izhod enega 2:1 RMUX-a na vhod drugega. Problem je pri poziciji vhodov. Edina možnost, kjer konstanta ob strani ne popači vhoda ali vhod ne popači izhoda za kontrolni signal ($P$) je, da signal pripeljemo po diagonali (negacija), ki pa žal ni dovolj močan (pade nazaj v nevtralno stxanje oz. nima dovolj moči, da deluje kot vhod/konstanta). To je prikazano na sliki (REF spodaj). Če bi takšna konfiguracija delovala bi jo lahko enostavno razširili na 8:1 RMUX.
+
+[Slika: Poizkus realizacije 4:1 RMUX](images/4_to_1_MUX_attempt.pdf)
+
+Iz teh poskusov smo ugotovili, da ob preveč kompaktnih realizacijah nimamo dovolj fleksibilnosti za vodila in jih je težko uporabiti kot bloke za bolj kompleksne logične funkcije. V tem primeru je bolje ustvariti čisto drugo realizacija QCA.
+
 
 > [!NOTE]
 > TODO:
@@ -157,9 +180,11 @@ Kljub ugotovljeni napaki bi to vezje lahko uporabili za implementacijo multiplek
 >
 > Primerjava različnih implementacij MUX:
 >
+> - tip mux (2:1 ali 4:1)
 > - število QCA celic
 > - površina oz. ploščina vezja
-> - še kaj?
+> - razpršitev energije (dunno kje to pogledas)
+> - število urinih con
 
 ## Zaključek
 
@@ -184,7 +209,9 @@ Kljub ugotovljeni napaki bi to vezje lahko uporabili za implementacijo multiplek
 > - Prvi dve implementaciji fredkinovih vrat
 >
 > **Nejc Ločičnik:**
-
+>
+> - Tretja implementacija fredkinovih vrat
+> - Poskus reverzibilnega 4-to-1 MUX na podlagi tretjih fredkinovih vrat
 ## Literatura
 
 [Reference](references.bib)
