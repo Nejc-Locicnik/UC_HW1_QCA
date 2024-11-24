@@ -159,11 +159,11 @@ Realizacija 4:1 RMUX je kot je opisano (ref nazaj na 2.2 k je standard 4:1 slika
 
 Na voljo imamo prvo in tretjo različico 2:1 RMUX realizacije, saj druga ni delovala. Za poizkus smo se odločili za tretjo različico, saj je bistveno bolj kompaktna in se izvede v samo dveh urinih fazah. V teoriji bi se potem 4:1 RMUX lahko izvedel v enem urinem ciklu (4 fazah).
 
-Na koncu se je izkazalo, da je kompaktnost, za katero smo mislili da je prednost, dejansko slabost. Nikakor nam ni uspelo povezati izhod enega 2:1 RMUX-a na vhod drugega. Problem je pri poziciji vhodov. Edina možnost, kjer konstanta ob strani ne popači vhoda ali vhod ne popači izhoda za kontrolni signal ($P$) je, da signal pripeljemo po diagonali (negacija), ki pa žal ni dovolj močan (pade nazaj v nevtralno stxanje oz. nima dovolj moči, da deluje kot vhod/konstanta). To je prikazano na sliki (REF spodaj). Če bi takšna konfiguracija delovala bi jo lahko enostavno razširili na 8:1 RMUX.
+Na koncu se je izkazalo, da je kompaktnost, za katero smo mislili da je prednost, dejansko slabost. Nikakor nam ni uspelo povezati izhod enega 2:1 RMUX-a na vhod drugega. Problem je pri poziciji vhodov. Edina možnost, kjer konstanta ob strani ne popači vhoda ali vhod ne popači izhoda za kontrolni signal ($P$) je, da signal pripeljemo po diagonali (negacija), ki pa žal ni dovolj močan (pade nazaj v nevtralno stxanje oz. nima dovolj moči, da deluje kot vhod/konstanta). To je prikazano na sliki (REF spodaj), kjer vidimo da sta vhodna signala na srednjem RMUX-u dovolj šibka, da vse celice srednjega RMUX-a konvergirajo v stanje 0 (-1 polarizacija), zaradi konstant. 
 
 [Slika: Poizkus realizacije 4:1 RMUX](images/4_to_1_MUX_attempt.pdf)
 
-Iz teh poskusov smo ugotovili, da ob preveč kompaktnih realizacijah nimamo dovolj fleksibilnosti za vodila in jih je težko uporabiti kot bloke za bolj kompleksne logične funkcije. V tem primeru je bolje ustvariti čisto drugo realizacija QCA.
+Če bi takšna konfiguracija delovala bi jo lahko enostavno razširili na 8:1 RMUX. Iz teh poskusov smo ugotovili, da ob preveč kompaktnih realizacijah nimamo dovolj fleksibilnosti za vodila in jih je težko uporabiti kot bloke za bolj kompleksne logične funkcije. V tem primeru je bolje ustvariti čisto drugo realizacija QCA.
 
 
 > [!NOTE]
